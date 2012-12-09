@@ -29,7 +29,7 @@ package
 			PlayerSetup();
 			FXSetup();
 			HUDSetup();
-			BackgroundSetup();
+			//BackgroundSetup();
 			GameSetup();
 		}
 		
@@ -79,12 +79,12 @@ package
 		public function BackgroundSetup():void
 		{
 			// Background
-			var BGIMG:Backdrop = new Backdrop(GC.Asset_Background, true, true);
+			/*var BGIMG:Backdrop = new Backdrop(GC.Asset_Background, true, true);
 			var BGENT:Entity = new Entity;
 			BGENT.x = 1000;
 			BGENT.graphic = BGIMG;
 			BGENT.layer = 50;
-			add(BGENT);
+			add(BGENT);*/
 		}
 		
 		// Game Mechanics Setup
