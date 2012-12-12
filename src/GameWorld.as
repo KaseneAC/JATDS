@@ -96,12 +96,20 @@ package
 		
 		//------------------UPDATE-METHODS------------------------------------------------------------
 		
+		// Cache
+		private var LivesCache:Number = 0;
+		private var ScoreCache:Number = 0;
+		private var LevelCache:Number = 0;
+		
 		// Update HUD
 		public function HUDUpdate():void
 		{
-			GV.GAMEHUD.setLives(GV.GameLives);
-			GV.GAMEHUD.setScore(GV.GameScore);
-			GV.GAMEHUD.setLevel(GV.GameLevel);
+			if (LivesCache != GV.GameLives) GV.GAMEHUD.setLives(GV.GameLives);
+			LivesCache = GV.GameLives;
+			if (ScoreCache != GV.GameScore) GV.GAMEHUD.setScore(GV.GameScore);
+			ScoreCache = GV.GameScore;
+			if (LevelCache != GV.GameLevel) GV.GAMEHUD.setLevel(GV.GameLevel);
+			LevelCache = GV.GameLevel;
 		}
 		
 		
@@ -185,7 +193,14 @@ package
 							
 							for (var x:int = 0; x < 5; x++)
 							{
-								SpawnShip(EnemyBehavior.ENEMY_STATIC_SHOOTING, EnemyType.ENEMY_BASIC);
+								
+								if (GV.GameLevel >= 4) // Make Them Shoot You at Level 4+
+								{
+									SpawnShip(EnemyBehavior.ENEMY_STATIC_SHOOTING, EnemyType.ENEMY_BASIC);
+								}else
+								{
+									SpawnShip(EnemyBehavior.ENEMY_STATIC, EnemyType.ENEMY_BASIC);
+								}
 							}
 							
 							break;

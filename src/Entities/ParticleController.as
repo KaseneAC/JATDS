@@ -28,6 +28,7 @@ package Entities
 			
 			graphic = emitter;
 			this.layer = GC.LAYER_PARTICLES;
+			
 		}
 		
 		public function explosion(_x:Number, _y:Number, particles:int = 20):void
@@ -43,7 +44,7 @@ package Entities
 		{
 			for (var i:uint = 0; i < particles; i++ )
 			{
-				emitter.emit("collect_powerup", _x, _y);
+				emitter.emit("explosion", _x, _y);
 			}
 		}
 		

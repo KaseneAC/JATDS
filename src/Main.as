@@ -1,5 +1,6 @@
 package 
 {
+
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	
@@ -24,7 +25,7 @@ package
 		
 		override public function init():void
 		{
-			
+			//this.addChild(new TheMiner());  
 		}
 		
 		

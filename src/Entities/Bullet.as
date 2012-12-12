@@ -52,7 +52,7 @@ package Entities
 			y += VelocityY * FP.elapsed;
 			
 			// If bullet leaves the screen, destroy it
-			if (y < FP.world.camera.y || y > FP.screen.height + 10 || x < 0 + 20 || x > FP.screen.width + 10)
+			if (y < FP.world.camera.y || y > FP.world.camera.y + FP.screen.height + 10 || x < 0 + 20 || x > FP.screen.width + 10)
 			{
 				destroy();
 			}

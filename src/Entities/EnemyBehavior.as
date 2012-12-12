@@ -9,7 +9,7 @@ package Entities
 		
 		public static const ENEMY_STATIC:int = 0; // Just flies straight ahead
 		public static const ENEMY_BOUNCE:int = 1; // Bounces back and forth across the screen
-		public static const ENEMY_STATIC_SHOOTING:int = 3;
+		public static const ENEMY_STATIC_SHOOTING:int = 2;
 		
 		private var _behavior:int;
 		

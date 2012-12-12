@@ -208,7 +208,7 @@ package Entities
 			
 			if (ShotTimer >= ShotFreq)
 			{
-				shootBullet(0, 400);
+				shootBullet(0, 240);
 				ShotTimer = 0;
 				
 			}else
@@ -240,6 +240,10 @@ package Entities
 				}
 				
 				case EnemyBehavior.ENEMY_BOUNCE: {
+					this.setVelocity(100, 100);// Set Regular Velocity
+					
+					
+					
 					break;
 				}
 				
@@ -251,7 +255,14 @@ package Entities
 			y += (VelocityY - SpeedMod) * FP.elapsed;
 			
 			
-
+			// If The Enemy is Touching Another Enemy
+			// Adjust Position Slowly
+			
+			var friend:Enemy = collide("Enemy", x, y) as Enemy;
+			if (friend)
+			{
+				friend.x += 30;
+			}
 			
 			// If the enemy leaves the bottom of the screen, destroy it
 			if (y >= FP.world.camera.y + FP.screen.height + 50 ) {
